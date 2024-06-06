@@ -1,0 +1,36 @@
+:root {
+    --green: #4D7C0F;
+
+    --blue-500: #1c1c24;
+
+    --gray-300: #94A3B8;
+
+    --white: #FFFFFF;
+}
+  :focus {
+    outline: transparent;
+    box-shadow: 0 0 0 2px var(--green);
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body, input, textarea, button {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    background-color: var(--blue-500);
+    color: var(--gray-300);  
+    height: 100vh; /* Garante que o body ocupe toda a altura da janela */
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+  }
+  #root {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
