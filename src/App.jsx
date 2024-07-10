@@ -20,7 +20,7 @@ export function App() {
       </div>
       <img 
         className={styles.avatarWithBorder} 
-        src="src\assets\images\luizhmal.jpg" 
+        src='src\assets\images\luizhmal.jpg'
         alt='Avatar of Luiz Henrique Meira'
       />
 
