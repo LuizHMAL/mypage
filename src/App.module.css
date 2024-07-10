@@ -5,14 +5,25 @@
   text-align: center;
   display: flex;
   flex-direction: column;
+  align-items: center;
   min-height: 100vh; /* Garante que o contêiner ocupe toda a altura da janela */
 }
 
-.appContainer {
+.Container{
   flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display:flex;
+  flex-direction:column; /* Alinha os filhos lado a lado */
+  align-items: center; /* Centraliza verticalmente */
+  justify-content: center; /* Centraliza horizontalmente */
+}
+.appContainer {
+
+  flex: 1;
+  display:flex;
+  flex-direction: row; /* Alinha os filhos lado a lado */
+  align-items: center; /* Centraliza verticalmente */
+  justify-content: center; /* Centraliza horizontalmente */
+ 
 }
 #root {
   max-width: 1280px;
@@ -22,15 +33,18 @@
 }
 
 .avatarWithBorder {
-  margin-top: 8rem;
-  width: calc(10rem);
-  height: calc(10rem);
-  border-radius: 100%;
+  height: 30rem;
+  aspect-ratio: 12/16;
+  /* height: 20rem; */
+  border-radius: 50%;
   border: 3px solid var(--green);
+margin-right:  10rem;
+margin-top: 4rem;
 }
 
 .presentationArea {
-  margin: 0 auto;
+
+
   display: grid;
   width: 28rem;
   height: 14rem;
@@ -43,6 +57,9 @@
 
 .text{
   font-size: 1.5rem;
+  margin-top: 4rem;
+  margin-left: 10rem;
+  margin-right: 6rem;
 }
 
 
@@ -51,7 +68,8 @@
   font-size: 1.7rem;
   padding-bottom: 1rem;
   color: white;
-  text-align: center;
+  margin-left: 10rem;
+  text-align: left;
 }
 .hightLighted {
   color: 3px solid var(--green);
@@ -65,3 +83,71 @@
   text-align: center;
   margin-top: auto; /* Empurra o footer para o fim da página */
 }
+
+.expandableCardContainer{
+  display: flex;
+  flex-direction: row;
+  justify-content: center; /* Alinha os itens ao centro horizontalmente */
+  align-items: center; /* Alinha os itens ao centro verticalmente */
+  width: 100%;
+  max-width: 55rem;
+  height: 20rem;
+  gap: 10px;
+  margin-inline: 50px; 
+  margin-top: 10rem;
+  transition: transform 0.3s ease;
+}
+
+
+.card{
+  display: block;
+  flex: 1;
+  width: 18rem;
+  min-width: 10%; /* Alterado para ocupar todo o espaço do card */
+  height: 100%;
+  border-radius: 30px;
+ 
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border: 4px solid gray;
+  overflow: hidden; /* Garante que a imagem não ultrapasse as bordas */
+  transition: transform 0.4s ease;
+  will-change: transform; /*melhora a performance da transição */
+}
+
+.card img {
+  width: 100%; /* Garante que a imagem ocupe todo o espaço do card */
+  height: 100%; /* Mantém a proporção da imagem */
+  object-fit: cover;
+  overflow: hidden; /*garante que a foto não utrapasse o card */
+
+}
+.card:hover {
+  flex: 4;
+  transition: transform 0.4s ease;
+  transform: scale(1.05); /* Aumenta o card ao passar o mouse */
+  width: 100%;
+  border-color: var(--green);
+  gap: 0 ;
+}
+
+
+.expandableCardContainer:not(:hover) div:nth-child(1){
+  flex:4;
+}
+
+.card-content > .title {
+  margin-left: 10px;
+  translate: 0 100%;
+  opacity: 0;
+}
+
+.card:hover .title {
+  opacity: 1;
+  transform: translateY(0); 
+}
+
+
+
+

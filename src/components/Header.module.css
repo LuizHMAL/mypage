@@ -1,0 +1,13 @@
+.header {
+    margin-top: 0;
+    height: 6rem;
+    width: 100%;
+    background-color: var(--blue-700);
+}
+.links{
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 2.5rem;
+}
+
+  
