@@ -1,5 +1,4 @@
 import styles from './App.module.css';
-import { Carousel } from './components/Carousel';
 import { ExpandableCard } from './components/ExpandableCard';
 import './global.css';
 
@@ -37,7 +36,7 @@ export function App() {
      </div>
      <ExpandableCard/>
 
-     <Carousel></Carousel>
+
       <footer className={styles.footer}>
         <p>© 2024 Luiz Henrique Meira. All rights reserved.</p>
       </footer>
