@@ -15,7 +15,17 @@ export function App() {
           Hey, I'm <span>Luiz Henrique Meira!</span>
         </h1>
         <p className={styles.text}> 
-          I'm a web developer from Brazil focused on front end and studying computer engineering
+          I'm a web developer from Brazil focused on front end and studying computer engineering.
+        </p>
+        <p className={styles.text}>Technologies:
+          <ul className={styles.technologiesList}>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>React</li>
+            <li>Node.js</li>
+            <li>Springboot</li>
+          </ul>
         </p>
       </div>
       <img 
