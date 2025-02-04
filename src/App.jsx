@@ -7,7 +7,7 @@ export function App() {
 
     <div className={styles.Container}>
       
-      <div className={styles.appContainer}>
+      <div className={styles.appContainer}> 
 
         <div>
         <h1 className={styles.title}>
@@ -34,8 +34,9 @@ export function App() {
       />
 
      </div>
+     <div id = "sites" className ={styles.sitesPortrait}>
      <ExpandableCard/>
-
+     </div>
 
       <footer className={styles.footer}>
         <p>© 2024 Luiz Henrique Meira. All rights reserved.</p>
