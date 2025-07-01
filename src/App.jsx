@@ -1,4 +1,5 @@
 import styles from './App.module.css';
+import { Carrossel } from './components/Carrossel';
 import { ExpandableCard } from './components/ExpandableCard';
 import './global.css';
 
@@ -34,13 +35,20 @@ export function App() {
       />
 
      </div>
+     
      <div id = "sites" className ={styles.sitesPortrait}>
      <ExpandableCard/>
+     </div> 
+
+      <div id = "sites" className ={styles.techsPortrait}>
+     <Carrossel/>
      </div>
 
       <footer className={styles.footer}>
         <p>© 2024 Luiz Henrique Meira. All rights reserved.</p>
       </footer>
     </div>
+    
+
   );
 }

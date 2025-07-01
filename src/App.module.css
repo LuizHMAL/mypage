@@ -40,8 +40,19 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #ADD8E6;
+  background-color: oklch(13% 0.028 261.692);
+  margin: 0 auto;
+  
 
+}
+
+.techsPortrait {
+   display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: oklch(27.8% 0.033 256.848);
 }
 
 .presentationArea {
