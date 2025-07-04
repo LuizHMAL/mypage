@@ -1,9 +1,11 @@
 .container {
+
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
-  border-radius: 1rem
+  border-radius: 1rem;
+  
 }
 
 .carrossel {
@@ -15,30 +17,57 @@
 }
 
 
+.carrossel img {
+  object-fit: cover;
+}
+
+
 .slideCentral {
   width: 60rem;
   height: 30rem;
   background-color: #D2D2D2;
-  border-radius: 1rem; 
+  border-radius: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 1rem;
+  justify-content: flex-start;
+  padding: 2rem 1.5rem;
   text-align: center;
   transition: all 0.4s ease-in-out;
+  position: relative;
+  border: 4px solid transparent;
+  gap: 1.2rem;
 }
 
-.slideCentral h2 {
-  font-size: 1.8rem;
-  margin-bottom: 0.5rem;
-  border-radius: 1rem; 
+
+.slideCentral:hover {
+  transform: rotateY(3deg) scale(1.03);
+  border-color: white;
+  box-shadow: 0 0 12px 2px rgba(255, 255, 255, 0.4);
 }
+
+
+.slideCentral h2 {
+  font-size: 2rem;
+  color: #111;
+  margin: 0;
+}
+
+
+.divider {
+  width: 90%;
+  height: 2px;
+  border: none;
+  background: linear-gradient(to right, transparent, black, transparent);
+  margin: 0;
+}
+
 
 .descricao {
   font-size: 1rem;
   color: #333;
-  border-radius: 1rem; 
+  max-width: 90%;
+
 }
 
 
@@ -47,10 +76,12 @@
   flex-direction: column;
   align-items: center;
   transition: all 0.4s ease-in-out;
-  border-radius: 1rem; 
+  border-radius: 1rem;
 }
 
+
 .slideMini {
+  position: relative;
   width: 10rem;
   height: 20rem;
   background-color: #ccc;
@@ -62,18 +93,190 @@
   text-align: center;
   padding: 0.5rem;
   font-size: 0.85rem;
-  border-radius: 1rem; 
-  hover {
-    filter: grayscale(0%);
-    opacity: 1;
-    background-color: #e0e0e0;
-    border:#333 1px solid;
-  }
+  border-radius: 1rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
+.slideMini:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+  background-color: #e0e0e0;
+  border: #fff 2px solid;
+}
+
+
+.slideMini::after {
+  content: '→';
+  position: absolute;
+  top: 60%;
+  right: 40%;
+  transform: translateY(-50%) translateX(10px);
+  opacity: 0;
+  color: white;
+  font-size: 1.3rem;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.slideMini:hover::after {
+  transform: translateY(-0%) translateX(0);
+  opacity: 1;
+}
+
+/* Texto abaixo do mini slide */
 .slideLateral p {
   margin-top: 0.5rem;
   font-size: 0.85rem;
   color: #444;
   text-align: center;
+}
+/* Telas médias: tablets e celulares grandes */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .carrossel {
+    gap: 1.2rem;
+    transform: scale(0.85);
+    transform-origin: top center;
+  }
+
+   .slideCentral::before {
+    content: '→'; /* Agora seta aponta para a direita */
+    position: absolute;
+    top: 50%;
+    left: 0.5rem;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    color: #333;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.5rem;
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  .slideCentral h2 {
+    font-size: 1.4rem;
+  }
+
+  .descricao {
+    font-size: 0.9rem;
+  }
+
+  .divider {
+    width: 75%;
+    height: 1px;
+  }
+
+  .slideMini {
+    width: 8rem;
+    height: 14rem;
+    font-size: 0.8rem;
+  }
+
+  .slideMini::after {
+    font-size: 1rem;
+    top: 50%;
+  }
+
+  .slideLateral p {
+    font-size: 0.75rem;
+  }
+}
+
+/* Telas pequenas: celulares */
+@media (max-width: 480px) {
+  .carrossel {
+    transform: scale(0.75);
+  }
+
+  .slideCentral {
+    width: 32rem;
+    height: 18rem;
+  }
+  .slideCentral:hover {
+  transform: rotateY(3deg) scale(1.03);
+  border-color: white;
+  box-shadow: 0 0 12px 2px rgba(255, 255, 255, 0.4);
+  
+}
+
+
+  .slideCentral::before {
+    content: '→'; /* Agora seta aponta para a direita */
+    position: absolute;
+    top: 50%;
+    left: 0.5rem;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    color: #333;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.5rem;
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  .descricao {
+    font-size: 0.85rem;
+  }
+
+  .slideMini {
+    width: 6rem;
+    height: 12rem;
+    font-size: 0.7rem;
+  }
+
+  .slideMini::after {
+    font-size: 0.8rem;
+    right: 38%;
+  }
+
+  .slideLateral p {
+    font-size: 0.7rem;
+  }
+}
+/* Novo botão dentro do slide central */
+.botaoLink {
+  margin-top: 1rem;
+  background-color: #007bff;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 0.6rem;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.botaoLink:hover {
+  background-color: #0056b3;
+}
+
+/* Ajuste da imagem do slide central */
+.slideImagemCentral {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1rem;
+}
+
+/* Remova se já tiver conflitos com isso */
+.slideCentral {
+  position: relative;
+  padding: 1rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.slideCentral img {
+  width: 100%;
+  height: auto;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
 }

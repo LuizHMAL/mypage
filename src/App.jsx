@@ -1,16 +1,21 @@
 import styles from './App.module.css';
 import { Carrossel } from './components/Carrossel';
 import { ExpandableCard } from './components/ExpandableCard';
+import { Header } from './components/Header';
 import './global.css';
 
 export function App() {
   return (
+    
 
+    
     <div className={styles.Container}>
-      
+    
       <div className={styles.appContainer}> 
-
-        <div>
+        
+      <Header/> 
+      
+        <section id = "inicio">
         <h1 className={styles.title}>
           Hey, I'm <span>Luiz Henrique Meira!</span>
         </h1>
@@ -27,7 +32,7 @@ export function App() {
             <li>Springboot</li>
           </ul>
         </p>
-      </div>
+      </section>
       <img 
         className={styles.avatarWithBorder} 
         src='images\luizhmal.jpg'
@@ -36,11 +41,11 @@ export function App() {
 
      </div>
      
-     <div id = "sites" className ={styles.sitesPortrait}>
+     <section id = "sites" className ={styles.sitesPortrait}>
      <ExpandableCard/>
-     </div> 
+     </section> 
 
-      <div id = "sites" className ={styles.techsPortrait}>
+      <div id = "techs" className ={styles.techsPortrait}>
      <Carrossel/>
      </div>
 

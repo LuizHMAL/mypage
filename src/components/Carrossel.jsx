@@ -3,39 +3,63 @@ import styles from './Carrossel.module.css';
 
 export function Carrossel() {
   const slides = [
-    { id: 0, titulo: 'História', descricao: 'd1.' },
-    { id: 1, titulo: 'Valores', descricao: 'd2.' },
-    { id: 2, titulo: 'Futuro', descricao: 'd3.' },
+    {
+      id: 0,
+      imagem: 'images/ifimg.png',
+      link: 'https://vercel.com/luiz-henriques-projects-953f8b78/ignite-feed-2tca',
+    },
+    {
+      id: 1,
+      imagem: 'images/loopah.png',
+      link: 'https://vercel.com/luiz-henriques-projects-953f8b78/loopah-6maj',
+    },
+    {
+      id: 2,
+      imagem: 'images/Vercel__Zeit_.jpeg',
+      link: 'https://vercel.com/luiz-henriques-projects-953f8b78',
+    },
   ];
 
-  const [ativo, setAtivo] = useState(0); 
-  const anterior = (ativo + 2) % 3;
-  const proximo = (ativo + 1) % 3;
+  const [ativo, setAtivo] = useState(0);
+  const anterior = (ativo + slides.length - 1) % slides.length;
+  const proximo = (ativo + 1) % slides.length;
 
   return (
     <div className={styles.container}>
       <div className={styles.carrossel}>
-       
+
         <div className={styles.slideLateral} onClick={() => setAtivo(anterior)}>
-          <div className={styles.slideMini}>
-            <span>{slides[anterior].titulo}</span>
-          </div>
-          <p>{slides[anterior].titulo}</p>
+          <img
+            src={slides[anterior].imagem}
+            alt="slide anterior"
+            className={styles.slideMini}
+          />
         </div>
 
-     
         <div className={styles.slideCentral}>
-          <h2>{slides[ativo].titulo}</h2>
-          <p className={styles.descricao}>{slides[ativo].descricao}</p>
+          <img
+            src={slides[ativo].imagem}
+            alt="slide ativo"
+            className={styles.slideImagemCentral}
+          />
+          <a
+            className={styles.botaoLink}
+            href={slides[ativo].link}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Ver projeto
+          </a>
         </div>
 
-  
         <div className={styles.slideLateral} onClick={() => setAtivo(proximo)}>
-          <div className={styles.slideMini}>
-            <span>{slides[proximo].titulo}</span>
-          </div>
-          <p>{slides[proximo].titulo}</p>
+          <img
+            src={slides[proximo].imagem}
+            alt="slide proximo"
+            className={styles.slideMini}
+          />
         </div>
+
       </div>
     </div>
   );

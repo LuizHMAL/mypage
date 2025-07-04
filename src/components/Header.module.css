@@ -1,13 +1,83 @@
-.header {
-    margin-top: 0;
-    height: 6rem;
-    width: 100%;
-    background-color: var(--blue-700);
+
+
+a {
+  font-weight: 500;
+  color: var(--green-700);
+  text-decoration: inherit;
+  transition: color 0.25s;
+  padding: 1rem;
 }
-.links{
-    margin: 0 auto;
-    text-align: center;
-    margin-top: 2.5rem;
+a:hover {
+  color: var(--green-700);
 }
 
+body {
+  margin: 0;
+}
+
+html {
+  scroll-padding-top: 80px;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background-color: var(--gray-500);
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  gap: 10px;
+  padding: 0 20px;
+  box-sizing: border-box;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.logo-cabecalho {
+  height: 150px;
+  display: flex;
+  align-items: center;
+}
+
+.logo-imagem {
+  max-height: 100%;
+  width: auto;
+}
+
+.links-navegacao {
+  display: flex;
+  gap: 35px;
+}
+
+.links-navegacao a {
   
+  
+  font-size: 1.4em;
+  font-weight: 300;
+}
