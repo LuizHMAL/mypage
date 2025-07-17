@@ -1,6 +1,7 @@
 import styles from './App.module.css';
 import { Carrossel } from './components/Carrossel';
 import { ExpandableCard } from './components/ExpandableCard';
+import { Forms } from './components/forms';
 import { Header } from './components/Header';
 import './global.css';
 
@@ -41,16 +42,20 @@ export function App() {
 
      </div>
      
-     <section id = "sites" className ={styles.sitesPortrait}>
+     <section id = "techs" className ={styles.sitesPortrait}>
      <ExpandableCard/>
      </section> 
 
-      <div id = "techs" className ={styles.techsPortrait}>
+      <div id = "sites" className ={styles.techsPortrait}>
      <Carrossel/>
      </div>
 
+     <div id = "contato" className ={styles.contatosPortrait}>
+      <Forms/>
+     </div>
+
       <footer className={styles.footer}>
-        <p>© 2024 Luiz Henrique Meira. All rights reserved.</p>
+        <p>© 2025 Luiz Henrique Meira. All rights reserved.</p>
       </footer>
     </div>
     
