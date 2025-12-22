@@ -76,11 +76,19 @@ body {
 }
 
 .sitesBg {
+  background-color: var(--blue-500);
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-    background-color: var(--blue-500);
+  align-items: center;
+  padding-top: 3rem;
 }
+
+.sitesBg footer {
+  margin-top: auto;
+  padding-bottom: 1.5rem;
+}
+
 
 .contatoBg {
   background-color: oklch(14.7% 0.004 49.25);

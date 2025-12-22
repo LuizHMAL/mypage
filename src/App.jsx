@@ -8,45 +8,45 @@ import { Footer } from "./components/Footer";
 import { LinkButton } from "./components/linkButton";
 const sections = ["inicio", "techs", "sites", "contato"];
 
-function ScrollSpy() {
-  const [activeSection, setActiveSection] = useState("inicio");
+// function ScrollSpy() {
+//   const [activeSection, setActiveSection] = useState("inicio");
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY + window.innerHeight / 2;
+//   useEffect(() => {
+//     const handleScroll = () => {
+//       const scrollPosition = window.scrollY + window.innerHeight / 2;
 
-      for (const id of sections) {
-        const section = document.getElementById(id);
-        if (!section) continue;
+//       for (const id of sections) {
+//         const section = document.getElementById(id);
+//         if (!section) continue;
 
-        const top = section.offsetTop;
-        const bottom = top + section.offsetHeight;
+//         const top = section.offsetTop;
+//         const bottom = top + section.offsetHeight;
 
-        if (scrollPosition >= top && scrollPosition < bottom) {
-          setActiveSection(id);
-          break;
-        }
-      }
-    };
+//         if (scrollPosition >= top && scrollPosition < bottom) {
+//           setActiveSection(id);
+//           break;
+//         }
+//       }
+//     };
 
-    window.addEventListener("scroll", handleScroll);
-    handleScroll();
+//     window.addEventListener("scroll", handleScroll);
+//     handleScroll();
 
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+//     return () => window.removeEventListener("scroll", handleScroll);
+//   }, []);
 
-  return (
-    <div className="scrollSpy">
-      {sections.map((id) => (
-        <a
-          key={id}
-          href={`#${id}`}
-          className={`dot ${activeSection === id ? "active" : ""}`}
-        />
-      ))}
-    </div>
-  );
-}
+//   return (
+//     <div className="scrollSpy">
+//       {sections.map((id) => (
+//         <a
+//           key={id}
+//           href={`#${id}`}
+//           className={`dot ${activeSection === id ? "active" : ""}`}
+//         />
+//       ))}
+//     </div>
+//   );
+// }
 
 
 
@@ -122,6 +122,12 @@ export function App() {
       descricao: 'Site portfólio coorporativo com empresas de um grupo.'
     }
   ]} />
+    <LinkButton 
+                  src="images/browsers.svg" 
+                  href="https://vercel.com/luiz-henriques-projects-953f8b78" 
+                  alt="WhatsApp"
+                  label="See more projects"
+                />
     <Footer>© 2025 Luiz Henrique Meira. All rights reserved.</Footer>
 </section>
 
@@ -129,7 +135,7 @@ export function App() {
         <Forms />
       </section> */}
       
-      <ScrollSpy />
+      {/* <ScrollSpy /> */}
     
 
     </>
