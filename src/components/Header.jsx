@@ -9,7 +9,7 @@ export function Header(){
           <a href="#inicio">Início</a>
           <a href="#techs">Tecnologias</a>
           <a href="#sites">Meus sites</a>
-          <a href="#contato">Contato</a>
+          {/* <a href="#contato">Contato</a> */}
         </nav>
       </header>
     )

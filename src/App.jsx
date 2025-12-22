@@ -4,6 +4,7 @@ import { Header } from "./components/Header";
 import { Carrossel } from "./components/Carrossel";
 import { ExpandableCard } from "./components/ExpandableCard";
 import { Forms } from "./components/forms";
+import { Footer } from "./components/Footer";
 import { LinkButton } from "./components/linkButton";
 const sections = ["inicio", "techs", "sites", "contato"];
 
@@ -121,13 +122,17 @@ export function App() {
       descricao: 'Site portfólio coorporativo com empresas de um grupo.'
     }
   ]} />
+    <Footer>© 2025 Luiz Henrique Meira. All rights reserved.</Footer>
 </section>
 
-      <section id="contato" className="section contatoBg">
+      {/* <section id="contato" className="section contatoBg">
         <Forms />
-      </section>
-
+      </section> */}
+      
       <ScrollSpy />
+    
+
     </>
+  
   );
 }
