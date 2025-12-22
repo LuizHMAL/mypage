@@ -97,13 +97,9 @@ export function App() {
         </div>
       </section>
 
-      <section id="techs" className="section techsBg">
-        <h2 className="title">Technologies I've been working with recently</h2>
-        <ExpandableCard />
-      </section>
 
-   <section id="sites" className="section sitesBg">
-  <h2  className="title">Some of my projects</h2>
+        <section id="sites" className="section sitesBg">
+        <h2  className="title">Some of my projects</h2>
   
   <Carrossel slides={[
     {
@@ -128,8 +124,18 @@ export function App() {
                   alt="WhatsApp"
                   label="See more projects"
                 />
-    <Footer>© 2025 Luiz Henrique Meira. All rights reserved.</Footer>
+   
 </section>
+
+
+      <section id="techs" className="section techsBg">
+        <h2 className="title">Technologies I've been working with recently</h2>
+        <ExpandableCard />
+      
+       <Footer>© 2025 Luiz Henrique Meira. All rights reserved.</Footer>
+      </section>
+
+ 
 
       {/* <section id="contato" className="section contatoBg">
         <Forms />
