@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react";
-import styles from './App.module.css';
-import { Carrossel } from './components/Carrossel';
-import { ExpandableCard } from './components/ExpandableCard';
-import { Forms } from './components/forms';
-import { Header } from './components/Header';
-import './global.css';
-
+import "./global.css";
+import { Header } from "./components/Header";
+import { Carrossel } from "./components/Carrossel";
+import { ExpandableCard } from "./components/ExpandableCard";
+import { Forms } from "./components/forms";
+import { LinkButton } from "./components/linkButton";
 const sections = ["inicio", "techs", "sites", "contato"];
 
 function ScrollSpy() {
@@ -13,80 +12,103 @@ function ScrollSpy() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollPosition = window.scrollY + window.innerHeight / 3;
+      const scrollPosition = window.scrollY + window.innerHeight / 2;
 
-      for (let id of sections) {
+      for (const id of sections) {
         const section = document.getElementById(id);
-        if (section) {
-          const offsetTop = section.offsetTop;
-          const offsetBottom = offsetTop + section.offsetHeight;
+        if (!section) continue;
 
-          if (scrollPosition >= offsetTop && scrollPosition < offsetBottom) {
-            setActiveSection(id);
-          }
+        const top = section.offsetTop;
+        const bottom = top + section.offsetHeight;
+
+        if (scrollPosition >= top && scrollPosition < bottom) {
+          setActiveSection(id);
+          break;
         }
       }
     };
 
     window.addEventListener("scroll", handleScroll);
+    handleScroll();
+
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
-    <div className={styles.scrollSpy}>
+    <div className="scrollSpy">
       {sections.map((id) => (
         <a
           key={id}
           href={`#${id}`}
-          className={`${styles.dot} ${activeSection === id ? styles.active : ""}`}
+          className={`dot ${activeSection === id ? "active" : ""}`}
         />
       ))}
     </div>
   );
 }
 
+
+
 export function App() {
   return (
-    <div>
-       <Header />
-      <div className={styles.appContainer}>
-       
-        <section id="inicio" className={styles.inicio}>
+    <>
+      <Header />
+      
+      <section id="inicio" className="section inicioBg">
+        <div className="sectionContent">
           <img
-            className={styles.avatarWithBorder}
-            src="images/luizhmal.jpg"
+            className="avatarWithBorder"
+            src="images/Avatar.jpeg"
             alt="Avatar of Luiz Henrique Meira"
           />
-          <div className={styles.inicioapresentacao}>
-            <h1 className={styles.title}>
-              Hey, I'm <span>Luiz Henrique Meira!</span>
-            </h1>
-            <p className={styles.text}>
-              I'm a web developer from Brazil focused on front end and studying
-              computer engineering.
-            </p>
-          </div>
-        </section>
-      </div>
 
-      <section id="techs" className={styles.sitesPortrait}>
+          <div className="presentationArea">
+            <h1 className="title">
+              Hey, I'm <span className="hightLighted">Luiz Henrique Meira!</span>
+            </h1>
+
+            <p className="text">
+              I'm a computer engineering student from Brazil, passionate about
+              technology and always eager to learn and take on new challenges.
+              </p>
+            <div className="linkbuttons">
+                <LinkButton 
+                  src="images/github-logo.svg" 
+                  href="https://github.com/luizhmal" 
+                  alt="GitHub"
+                />
+
+                <LinkButton 
+                  src="images/linkedin-logo.svg" 
+                  href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile" 
+                  alt="LinkedIn"
+                />
+
+                <LinkButton 
+                  src="images/whatsapp-logo.svg" 
+                  href="https://w.app/vc1tky" 
+                  alt="WhatsApp"
+                />
+            </div>
+
+                
+          </div>
+        </div>
+      </section>
+
+      <section id="techs" className="section techsBg">
         <ExpandableCard />
       </section>
 
-      <div id="sites" className={styles.techsPortrait}>
+      <section id="sites" className="section sitesBg">
         <Carrossel />
-      </div>
+      </section>
 
-      <div id="contato" className={styles.contatosPortrait}>
+      <section id="contato" className="section contatoBg">
         <Forms />
-      </div>
+      </section>
 
-      <footer className={styles.footer}>
-        <p>© 2025 Luiz Henrique Meira. All rights reserved.</p>
-      </footer>
-
-      {/* ScrollSpy bolinhas fixas */}
       <ScrollSpy />
-    </div>
+    </>
   );
 }

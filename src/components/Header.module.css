@@ -1,14 +1,13 @@
-
-
 a {
   font-weight: 500;
-  color: var(--green-700);
+  color: var(--gray-300);
   text-decoration: inherit;
   transition: color 0.25s;
   padding: 1rem;
 }
+
 a:hover {
-  color: var(--green-700);
+  color: var(--green);
 }
 
 body {
@@ -16,7 +15,7 @@ body {
 }
 
 html {
-  scroll-padding-top: 80px;
+  scroll-padding-top: 5rem;
 }
 
 h1 {
@@ -35,9 +34,11 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
+
 button:hover {
   border-color: #646cff;
 }
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
@@ -49,33 +50,49 @@ button:focus-visible {
   left: 0;
   width: 100%;
   height: 5rem;
-  background-color: var(--gray-500);
+  background-color: var(--blue-500);
   display: flex;
-  align-items: center !important;
-  padding: 0 20px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10%;
   box-sizing: border-box;
-
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 2000;
 }
 
-
-.header h2{
-
+.header h2 {
+  color: var(--white);
 }
+
 .header nav {
-margin: 0 auto;
-margin-left: 75rem
-
+  display: flex;
+  align-items: center;
 }
 
 .links-navegacao {
   display: flex;
   gap: 35px;
+  list-style: none;
 }
 
 .links-navegacao a {
-  
-  
   font-size: 1.4em;
   font-weight: 300;
+  padding: 0;
+}
+
+@media (max-width: 1024px) {
+  .header {
+    padding: 0 5%;
+  }
+}
+
+@media (max-width: 768px) {
+  .links-navegacao {
+    gap: 20px;
+  }
+  
+  .links-navegacao a {
+    font-size: 1.1em;
+  }
 }

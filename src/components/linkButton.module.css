@@ -1,0 +1,30 @@
+.linkButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  background-color: transparent;
+  border: 2px solid var(--green);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  margin-top: 1.5rem;
+  margin-left: 1.5rem;
+}
+
+.linkButton img {
+  width: 2rem;
+  height: 2rem;
+  filter: brightness(0) invert(1);
+}
+
+.linkButton:hover {
+  background-color: var(--green);
+  transform: translateY(-3px);
+  box-shadow: 0 0 15px var(--green);
+}
+
+.linkButton:hover img {
+  filter: brightness(0) saturate(100%) invert(100%);
+}
