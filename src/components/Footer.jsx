@@ -1,9 +1,9 @@
-import {styles} from './Footer.module.css';
+import styles from "./Footer.module.css";
 
-export function Footer(){
-    return(
-        <div className={styles.footer}>
-        <p>port</p>
-        </div>
-    )
+export function Footer({ children }) {
+  return (
+    <footer className={styles.footer}>
+      <p>{children}</p>
+    </footer>
+  );
 }
