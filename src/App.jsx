@@ -59,8 +59,7 @@ export function App() {
         <div className="sectionContent">
           <img
             className="avatarWithBorder"
-            src="images/Avatar.jpeg"
-            alt="Avatar of Luiz Henrique Meira"
+            src="assets/Avatar.jpeg"
           />
 
           <div className="presentationArea">
@@ -74,19 +73,19 @@ export function App() {
               </p>
             <div className="linkbuttons">
                 <LinkButton 
-                  src="images/github-logo.svg" 
+                  src="assets/github-logo.svg" 
                   href="https://github.com/luizhmal" 
                   alt="GitHub"
                 />
 
                 <LinkButton 
-                  src="images/linkedin-logo.svg" 
+                  src="assets/linkedin-logo.svg" 
                   href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile" 
                   alt="LinkedIn"
                 />
 
                 <LinkButton 
-                  src="images/whatsapp-logo.svg" 
+                  src="assets/whatsapp-logo.svg" 
                   href="https://w.app/vc1tky" 
                   alt="WhatsApp"
                 />
@@ -103,23 +102,23 @@ export function App() {
   
   <Carrossel slides={[
     {
-      imagem: "/public/images/loopah.png",
+      imagem: "/assets/loopah.png",
       titulo: 'Site de viagens',
       descricao: 'Site de viagens: Compania Loopah.'
     },
     {
-      imagem: "/public/images/ifimg.png",
+      imagem: "/assets/ifimg.png",
       titulo: 'Feed de mensagens',
       descricao: 'Dashboard de rede social com feed interativo.'
     },
     {
-      imagem: "/public/images/WeJ.png",
+      imagem: "/assets/WeJ.png",
       titulo: 'Site portfólio',
       descricao: 'Site portfólio coorporativo com empresas de um grupo.'
     }
   ]} />
     <LinkButton 
-                  src="images/browsers.svg" 
+                  src="assets/browsers.svg" 
                   href="https://vercel.com/luiz-henriques-projects-953f8b78" 
                   alt="WhatsApp"
                   label="See more projects"

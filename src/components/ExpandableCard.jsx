@@ -4,19 +4,19 @@ export function ExpandableCard() {
   return (
     <div className={styles.expandableCardContainer}>
       <div className={styles.card}>
-        <img src="images/reactLogo.svg" alt="React" />
+        <img src="assets/reactLogo.svg" alt="React" />
       </div>
       <div className={styles.card}>
-        <img src="images/jsLogo.svg" alt="JavaScript" />
+        <img src="assets/jsLogo.svg" alt="JavaScript" />
       </div>
       <div className={styles.card}>
-        <img src="images/htmlLogo.svg" alt="HTML" />
+        <img src="assets/htmlLogo.svg" alt="HTML" />
       </div>
       <div className={styles.card}>
-        <img src="images/cssLogo.svg" alt="CSS" />
+        <img src="assets/cssLogo.svg" alt="CSS" />
       </div>
       <div className={styles.card}>
-        <img src="images/vite.svg" alt="Vite" />
+        <img src="assets/vite.svg" alt="Vite" />
       </div>
     </div>
   );
