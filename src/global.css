@@ -47,14 +47,39 @@ body {
 
 .inicioBg {
   background-color: var(--blue-500);
+  background: radial-gradient(
+    circle, 
+    rgba(77, 124, 15, 0.2) 0%, 
+    var(--blue-500) 50%
+  );
+  animation: pulseBg 5s ease-in-out infinite;
 }
 
+@property --pulse-opacity {
+  syntax: '<number>';
+  initial-value: 0.1;
+  inherits: false;
+}
+
+@property --pulse-size {
+  syntax: '<percentage>';
+  initial-value: 70%;
+  inherits: false;
+}
+
+
 .techsBg {
-  background-color: oklch(27.8% 0.033 256.848);
+   background-color: var(--blue-500);
+   margin: 0 auto;
+   display: flex;
+    flex-direction: column;
 }
 
 .sitesBg {
-  background-color: oklch(13% 0.028 261.692);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--blue-700);
 }
 
 .contatoBg {

@@ -3,7 +3,7 @@ import styles from './Header.module.css'
 export function Header(){
     return(
          <header className= {styles.header}>
-          <h2>Luiz Henrique Meira</h2>
+          <h2>&lt;LuizHMAL /&gt; </h2>
        
         <nav className="links-navegacao" >
           <a href="#inicio">Início</a>

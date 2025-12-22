@@ -1,65 +1,69 @@
-import { useState } from 'react';
-import styles from './Carrossel.module.css';
+import { useEffect, useRef, useState } from "react";
+import styles from "./Carrossel.module.css";
 
-export function Carrossel() {
-  const slides = [
-    {
-      id: 0,
-      imagem: 'images/ifimg.png',
-      link: 'https://vercel.com/luiz-henriques-projects-953f8b78/ignite-feed-2tca',
-    },
-    {
-      id: 1,
-      imagem: 'images/loopah.png',
-      link: 'https://vercel.com/luiz-henriques-projects-953f8b78/loopah-6maj',
-    },
-    {
-      id: 2,
-      imagem: 'images/Vercel__Zeit_.jpeg',
-      link: 'https://vercel.com/luiz-henriques-projects-953f8b78',
-    },
-  ];
+export function Carrossel({ slides }) {
+  const [index, setIndex] = useState(0);
+  const intervalRef = useRef(null);
+  const total = slides.length;
 
-  const [ativo, setAtivo] = useState(0);
-  const anterior = (ativo + slides.length - 1) % slides.length;
-  const proximo = (ativo + 1) % slides.length;
+  const next = () => setIndex((i) => (i + 1) % total);
+  const prev = () => setIndex((i) => (i - 1 + total) % total);
+
+  /* AUTOPLAY */
+  useEffect(() => {
+    startAutoPlay();
+    return stopAutoPlay;
+  }, []);
+
+  const startAutoPlay = () => {
+    stopAutoPlay();
+    intervalRef.current = setInterval(next, 10000);
+  };
+
+  const stopAutoPlay = () => {
+    if (intervalRef.current) clearInterval(intervalRef.current);
+  };
 
   return (
-    <div className={styles.container}>
-      <div className={styles.carrossel}>
+    <div
+      className={styles.container}
+      onMouseEnter={stopAutoPlay}
+      onMouseLeave={startAutoPlay}
+    >
+      <button className={`${styles.arrow} ${styles.left}`} onClick={prev}>
+        <span>‹</span>
+      </button>
 
-        <div className={styles.slideLateral} onClick={() => setAtivo(anterior)}>
-          <img
-            src={slides[anterior].imagem}
-            alt="slide anterior"
-            className={styles.slideMini}
-          />
+      <div className={styles.viewport}>
+        <div
+          className={styles.track}
+          style={{ transform: `translateX(-${index * 100}%)` }}
+        >
+          {slides.map((slide, i) => (
+            <div className={styles.slide} key={i}>
+              <img src={slide.imagem} alt={slide.titulo} />
+
+              <div className={styles.overlay}>
+                <h3 className={styles.title}>{slide.titulo}</h3>
+                <p className={styles.description}>{slide.descricao}</p>
+              </div>
+            </div>
+          ))}
         </div>
+      </div>
 
-        <div className={styles.slideCentral}>
-          <img
-            src={slides[ativo].imagem}
-            alt="slide ativo"
-            className={styles.slideImagemCentral}
+      <button className={`${styles.arrow} ${styles.right}`} onClick={next}>
+        <span>›</span>
+      </button>
+
+      <div className={styles.dots}>
+        {slides.map((_, i) => (
+          <span
+            key={i}
+            className={`${styles.dot} ${i === index ? styles.active : ""}`}
+            onClick={() => setIndex(i)}
           />
-          <a
-            className={styles.botaoLink}
-            href={slides[ativo].link}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Ver projeto
-          </a>
-        </div>
-
-        <div className={styles.slideLateral} onClick={() => setAtivo(proximo)}>
-          <img
-            src={slides[proximo].imagem}
-            alt="slide proximo"
-            className={styles.slideMini}
-          />
-        </div>
-
+        ))}
       </div>
     </div>
   );

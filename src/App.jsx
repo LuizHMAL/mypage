@@ -64,7 +64,7 @@ export function App() {
 
           <div className="presentationArea">
             <h1 className="title">
-              Hey, I'm <span className="hightLighted">Luiz Henrique Meira!</span>
+              Hey, I'm <span className="hightLighted"> Luiz Henrique Meira </span>
             </h1>
 
             <p className="text">
@@ -97,12 +97,31 @@ export function App() {
       </section>
 
       <section id="techs" className="section techsBg">
+        <h2 className="title">Technologies I've been working with recently</h2>
         <ExpandableCard />
       </section>
 
-      <section id="sites" className="section sitesBg">
-        <Carrossel />
-      </section>
+   <section id="sites" className="section sitesBg">
+  <h2  className="title">Some of my projects</h2>
+  
+  <Carrossel slides={[
+    {
+      imagem: "/public/images/loopah.png",
+      titulo: 'Site de viagens',
+      descricao: 'Site de viagens: Compania Loopah.'
+    },
+    {
+      imagem: "/public/images/ifimg.png",
+      titulo: 'Feed de mensagens',
+      descricao: 'Dashboard de rede social com feed interativo.'
+    },
+    {
+      imagem: "/public/images/WeJ.png",
+      titulo: 'Site portfólio',
+      descricao: 'Site portfólio coorporativo com empresas de um grupo.'
+    }
+  ]} />
+</section>
 
       <section id="contato" className="section contatoBg">
         <Forms />
