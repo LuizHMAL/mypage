@@ -22,26 +22,23 @@ h1 {
   font-size: 3.2em;
   line-height: 1.1;
 }
+
 .header h2 {
   font-family: 'Roboto', sans-serif;
-  font-size: 2rem; 
+  font-size: 2rem;
   font-weight: 900;
-  
-
   background: linear-gradient(
-    90deg, 
-    #4D7C0F, 
-    #a3cf62, 
-    #4D7C0F, 
+    90deg,
+    #4D7C0F,
+    #a3cf62,
+    #4D7C0F,
     #a3cf62
   );
   background-size: 300% 100%;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-
   filter: drop-shadow(0 0 8px rgba(77, 124, 15, 0.8));
-  
   animation: moveGradient 4s linear infinite;
 }
 
@@ -49,7 +46,6 @@ h1 {
   0% { background-position: 0% 50%; }
   100% { background-position: 100% 50%; }
 }
-
 
 button {
   border-radius: 8px;
@@ -88,10 +84,6 @@ button:focus-visible {
   z-index: 2000;
 }
 
-.header h2 {
-  color: var(--white);
-}
-
 .header nav {
   display: flex;
   align-items: center;
@@ -116,11 +108,17 @@ button:focus-visible {
 }
 
 @media (max-width: 768px) {
-  .links-navegacao {
-    gap: 20px;
+  .header {
+    justify-content: center;
   }
-  
-  .links-navegacao a {
-    font-size: 1.1em;
+
+  .header h2 {
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .header nav,
+  .links-navegacao {
+    display: none;
   }
 }

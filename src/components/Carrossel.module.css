@@ -1,27 +1,20 @@
-/* CONTAINER */
 .container {
   width: 100%;
   max-width: 60rem;
-  max-height: 200rem;
-  margin: 0 auto;
+  margin: 6rem auto 2rem auto;
   position: relative;
-  margin-top: 6rem;
-  margin-bottom:2rem;
 }
 
-/* VIEWPORT */
 .viewport {
   overflow: hidden;
   border-radius: 1.2rem;
 }
 
-/* TRACK */
 .track {
   display: flex;
   transition: transform 0.6s ease;
 }
 
-/* SLIDE */
 .slide {
   min-width: 100%;
   height: 30rem;
@@ -31,7 +24,6 @@
   outline: none;
 }
 
-/* IMAGEM */
 .slide img {
   width: 100%;
   height: 100%;
@@ -40,7 +32,6 @@
   z-index: 1;
 }
 
-/* OVERLAY (TEXTO) */
 .overlay {
   position: absolute;
   inset: 0;
@@ -50,7 +41,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 2.5rem 6rem; /* zona segura longe das setas */
+  padding: 2.5rem 6rem;
   z-index: 2;
 }
 
@@ -58,7 +49,6 @@
   opacity: 1;
 }
 
-/* TEXTO */
 .title {
   color: white;
   font-size: 2.2rem;
@@ -71,37 +61,30 @@
   max-width: 90%;
 }
 
-/* ARROWS (NÃO COBREM TEXTO) */
 .arrow {
   position: absolute;
   top: 0;
   height: 100%;
   width: 3.5rem;
-
   border: none;
   outline: none;
   box-shadow: none;
-
   cursor: pointer;
   z-index: 3;
   opacity: 0;
   transition: opacity 0.3s ease;
-
   background: transparent;
-
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-/* remove foco branco do chrome */
 .arrow:focus,
 .arrow:focus-visible {
   outline: none;
   box-shadow: none;
 }
 
-/* firefox */
 .arrow::-moz-focus-inner {
   border: 0;
 }
@@ -109,6 +92,7 @@
 .container:hover .arrow {
   opacity: 1;
 }
+
 .left {
   left: 0;
   background: linear-gradient(
@@ -126,12 +110,13 @@
     rgba(0, 0, 0, 0)
   );
 }
+
 .arrow span {
   font-size: 2.4rem;
   color: white;
   opacity: 0.85;
   transition: transform 0.3s ease, opacity 0.3s ease;
-  pointer-events: none; /* MUITO IMPORTANTE */
+  pointer-events: none;
 }
 
 .left span {
@@ -146,12 +131,11 @@
   transform: translateX(0);
   opacity: 1;
 }
+
 .arrow:hover {
   background: rgba(255, 255, 255, 0.03);
 }
 
-
-/* DOTS */
 .dots {
   display: flex;
   justify-content: center;
@@ -173,22 +157,37 @@
   transform: scale(1.3);
 }
 
-/* MOBILE */
+/* ================= MOBILE RESPONSIVO ================= */
+
 @media (max-width: 768px) {
+  .container {
+    margin-top: 3rem;
+  }
+
   .slide {
-    height: 22rem;
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+
+  .slide img {
+    height: 100%;
+    object-fit: cover;
   }
 
   .overlay {
-    padding: 1.5rem 2rem;
+    opacity: 1;
+    padding: 1.2rem;
+    justify-content: flex-end;
+    gap: 0.5rem;
   }
 
   .title {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
 
   .description {
     font-size: 0.95rem;
+    max-width: 100%;
   }
 
   .arrow {
