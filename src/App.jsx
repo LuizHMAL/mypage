@@ -80,7 +80,7 @@ export function App() {
 
                 <LinkButton 
                   src="assets/linkedin-logo.svg" 
-                  href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile" 
+                  href="https://www.linkedin.com/in/luiz-henrique-meira-andrade-leite-23a9b1205" 
                   alt="LinkedIn"
                 />
 
