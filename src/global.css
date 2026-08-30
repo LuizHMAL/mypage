@@ -357,6 +357,9 @@ body {
 /* =====================================================
    RESPONSIVE DESIGN
    ===================================================== */
+/* =====================================================
+   RESPONSIVE DESIGN
+   ===================================================== */
 @media (max-width: 1024px) {
   .sectionContent {
     flex-direction: column;
@@ -378,11 +381,36 @@ body {
 @media (max-width: 768px) {
   .section {
     padding: 5.5rem 1rem 3rem 1rem;
+    min-height: auto;
   }
 
   .avatarWithBorder {
     width: 13rem;
     height: 13rem;
+  }
+
+  .avatarGlowRing {
+    inset: -6px;
+    filter: blur(8px);
+  }
+
+  .title {
+    font-size: 1.85rem;
+    line-height: 1.25;
+  }
+
+  .sectionHeader {
+    margin-bottom: 1.75rem;
+  }
+
+  .sectionSubtitle {
+    font-size: 0.95rem;
+    margin-top: 0.5rem;
+  }
+
+  .text {
+    font-size: 0.98rem;
+    line-height: 1.6;
   }
 
   .scrollSpy {
@@ -391,5 +419,27 @@ body {
 
   .linkbuttons {
     justify-content: center;
+    gap: 0.65rem;
   }
 }
+
+@media (max-width: 480px) {
+  .section {
+    padding: 5rem 0.85rem 2.5rem 0.85rem;
+  }
+
+  .avatarWithBorder {
+    width: 10.5rem;
+    height: 10.5rem;
+  }
+
+  .title {
+    font-size: 1.65rem;
+  }
+
+  .statusPill {
+    font-size: 0.76rem;
+    padding: 0.3rem 0.7rem;
+  }
+}
+

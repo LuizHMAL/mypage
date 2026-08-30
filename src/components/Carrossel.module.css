@@ -233,24 +233,69 @@
 
 /* ================= RESPONSIVO ================= */
 @media (max-width: 768px) {
+  .container {
+    margin: 1rem auto 1.5rem auto;
+  }
+
   .slide {
-    height: 24rem;
+    height: 23rem;
   }
 
   .overlay {
-    padding: 1.5rem 1.25rem;
+    padding: 1.25rem 1rem;
+    background: linear-gradient(
+      180deg,
+      rgba(9, 13, 22, 0.2) 0%,
+      rgba(9, 13, 22, 0.75) 50%,
+      rgba(9, 13, 22, 0.98) 100%
+    );
   }
 
   .title {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
+    line-height: 1.3;
   }
 
   .description {
-    font-size: 0.92rem;
+    font-size: 0.88rem;
+    line-height: 1.45;
+  }
+
+  .projectButton {
+    padding: 0.55rem 1rem;
+    font-size: 0.85rem;
   }
 
   .arrow {
     display: none;
   }
 }
+
+@media (max-width: 480px) {
+  .slide {
+    height: 21rem;
+  }
+
+  .overlay {
+    padding: 1rem 0.85rem;
+  }
+
+  .title {
+    font-size: 1.15rem;
+  }
+
+  .description {
+    font-size: 0.82rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .tag {
+    font-size: 0.72rem;
+    padding: 0.2rem 0.55rem;
+  }
+}
+
 

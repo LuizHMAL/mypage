@@ -177,45 +177,96 @@
 
 /* ================= RESPONSIVE ================= */
 @media (max-width: 768px) {
+  .wrapper {
+    gap: 1.5rem;
+    width: 100%;
+  }
+
+  .filterBar {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding: 0.5rem;
+    gap: 0.5rem;
+    border-radius: 16px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .filterBar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .filterBtn {
+    font-size: 0.82rem;
+    padding: 0.45rem 0.85rem;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
   .techGrid {
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-    gap: 0.9rem;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 0.85rem;
+    width: 100%;
   }
 
   .card {
-    padding: 1.15rem 1rem;
-    min-height: 170px;
+    padding: 1.1rem 0.9rem;
+    min-height: 155px;
+    border-radius: 16px;
   }
 
   .imageWrapper {
-    width: 2.75rem;
-    height: 2.75rem;
+    width: 2.6rem;
+    height: 2.6rem;
   }
 
   .techName {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
   }
 
   .categoryBadge {
     font-size: 0.62rem;
     padding: 0.2rem 0.5rem;
+    max-width: 85px;
   }
 
   .techDescription {
-    font-size: 0.78rem;
-    line-height: 1.4;
-  }
-
-  .filterBar {
-    border-radius: 16px;
-    width: 100%;
-    padding: 0.4rem;
-  }
-
-  .filterBtn {
-    font-size: 0.8rem;
-    padding: 0.4rem 0.8rem;
+    font-size: 0.76rem;
+    line-height: 1.35;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 }
+
+@media (max-width: 380px) {
+  .techGrid {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.65rem;
+  }
+
+  .card {
+    padding: 0.9rem 0.75rem;
+  }
+
+  .imageWrapper {
+    width: 2.2rem;
+    height: 2.2rem;
+  }
+
+  .techName {
+    font-size: 0.95rem;
+  }
+
+  .categoryBadge {
+    display: none;
+  }
+}
+
 
 

@@ -70,6 +70,11 @@ export function Header({ activeSection = 'inicio' }) {
         </button>
       </div>
 
+      {/* Mobile Backdrop */}
+      {mobileMenuOpen && (
+        <div className={styles.mobileBackdrop} onClick={handleLinkClick} />
+      )}
+
       {/* Mobile Drawer */}
       <div className={`${styles.mobileDrawer} ${mobileMenuOpen ? styles.mobileDrawerOpen : ''}`}>
         <div className={styles.mobileNavLinks}>
@@ -92,4 +97,5 @@ export function Header({ activeSection = 'inicio' }) {
       </div>
     </header>
   );
-}
+}
+

@@ -185,10 +185,31 @@
 @media (max-width: 768px) {
   .formCard {
     padding: 1.75rem 1.25rem;
+    border-radius: 18px;
   }
 
   .title {
     font-size: 1.35rem;
   }
+
+  .inputGroup {
+    padding: 0.75rem 0.85rem;
+  }
+
+  .inputGroup input,
+  .inputGroup textarea {
+    font-size: 16px; /* Prevents auto-zoom on mobile safari */
+  }
 }
+
+@media (max-width: 480px) {
+  .formCard {
+    padding: 1.35rem 0.95rem;
+  }
+
+  .subtitle {
+    font-size: 0.85rem;
+  }
+}
+
 

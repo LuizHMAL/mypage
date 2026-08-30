@@ -38,24 +38,36 @@ export function Carrossel({ slides }) {
     return stopAutoPlay;
   }, [isPaused, startAutoPlay, stopAutoPlay]);
 
+  const startY = useRef(0);
+  const deltaY = useRef(0);
+
   const onTouchStart = (e) => {
     stopAutoPlay();
     startX.current = e.touches[0].clientX;
+    startY.current = e.touches[0].clientY;
+    deltaX.current = 0;
+    deltaY.current = 0;
   };
 
   const onTouchMove = (e) => {
     deltaX.current = e.touches[0].clientX - startX.current;
+    deltaY.current = e.touches[0].clientY - startY.current;
   };
 
   const onTouchEnd = () => {
-    if (deltaX.current > SWIPE_THRESHOLD) {
-      prev();
-    } else if (deltaX.current < -SWIPE_THRESHOLD) {
-      next();
+    // Only swipe if horizontal motion was greater than vertical motion
+    if (Math.abs(deltaX.current) > Math.abs(deltaY.current)) {
+      if (deltaX.current > SWIPE_THRESHOLD) {
+        prev();
+      } else if (deltaX.current < -SWIPE_THRESHOLD) {
+        next();
+      }
     }
     deltaX.current = 0;
+    deltaY.current = 0;
     if (!isPaused) startAutoPlay();
   };
+
 
   return (
     <div
