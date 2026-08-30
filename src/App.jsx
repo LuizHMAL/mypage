@@ -120,7 +120,7 @@ export function App() {
 
             <p className="text">
               Estudante de <strong>Engenharia de Computação</strong> apaixonado por
-              desenvolvimento web frontend, interfaces modernas e experiências digitais interativas.
+              desenvolvimento web fullstack, interfaces modernas e experiências digitais interativas.
               Sempre em busca de inovação e novos desafios técnicos.
             </p>
 
