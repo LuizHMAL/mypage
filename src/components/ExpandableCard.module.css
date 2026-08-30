@@ -2,91 +2,192 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
-
+  align-items: stretch;
   width: 100%;
-  max-width: 50rem;
-  height: 20rem;
-
-  margin: 10rem auto 0 auto;
-  gap: 10px;
-
+  max-width: 62rem;
+  height: 22rem;
+  margin: 1.5rem auto 0 auto;
+  gap: 1rem;
   transition: transform 0.3s ease;
-  flex-wrap: nowrap;
+  position: relative;
+  z-index: 2;
 }
 
 /* ================= CARDS ================= */
 
 .card {
   display: flex;
+  flex-direction: column;
   flex: 1;
   height: 100%;
-
-  border-radius: 30px;
+  border-radius: 24px;
   align-items: center;
   justify-content: center;
   position: relative;
-
-  border: 4px solid gray;
+  background: rgba(17, 24, 39, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 2px solid rgba(255, 255, 255, 0.08);
   overflow: hidden;
-
-  transition: transform 0.4s ease, flex 0.4s ease;
-  will-change: transform;
+  cursor: pointer;
+  padding: 1.5rem;
+  transition: flex 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+              border-color 0.4s ease,
+              box-shadow 0.4s ease;
+  will-change: flex, transform;
 }
 
-.card img {
+.imageWrapper {
+  width: 5rem;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.4s ease;
+  z-index: 2;
+}
+
+.techIcon {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.4));
+  transition: transform 0.4s ease;
 }
 
-/* ================= HOVER (DESKTOP) ================= */
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transform: translateY(15px);
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 2;
+  margin-top: 0.75rem;
+  width: 100%;
+}
+
+.categoryBadge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.25rem 0.65rem;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.07);
+  color: var(--tech-color, var(--primary-light));
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 0.5rem;
+}
+
+.techName {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 0.35rem;
+}
+
+.techDescription {
+  font-size: 0.88rem;
+  color: var(--gray-300);
+  line-height: 1.45;
+  max-width: 90%;
+}
+
+.cardGlowOverlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 30%, var(--tech-glow, rgba(16, 185, 129, 0.15)), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ================= ACTIVE / HOVER STATE (DESKTOP) ================= */
 
 @media (hover: hover) and (pointer: fine) {
-  .card:hover {
-    flex: 4;
-    transform: scale(1.05);
-    border-color: var(--green);
+  .card:hover,
+  .activeCard {
+    flex: 3.5;
+    border-color: var(--tech-color, var(--primary-light));
+    box-shadow: 0 12px 35px -5px var(--tech-glow, rgba(16, 185, 129, 0.3));
+    background: rgba(22, 32, 50, 0.85);
   }
 
-  .expandableCardContainer:not(:hover) .card:nth-child(1) {
-    flex: 4;
+  .card:hover .imageWrapper,
+  .activeCard .imageWrapper {
+    transform: scale(1.15) translateY(-5px);
   }
 
-  .card-content > .title {
-    margin-left: 10px;
-    transform: translateY(100%);
-    opacity: 0;
-    transition: all 0.3s ease;
-  }
-
-  .card:hover .title {
+  .card:hover .cardContent,
+  .activeCard .cardContent {
     opacity: 1;
+    max-height: 150px;
     transform: translateY(0);
+  }
+
+  .card:hover .cardGlowOverlay,
+  .activeCard .cardGlowOverlay {
+    opacity: 1;
   }
 }
 
 /* ================= MOBILE ================= */
 
-@media (max-width: 768px) {
+@media (max-width: 860px) {
   .expandableCardContainer {
-    /* 🔥 troca flex por grid para centralização perfeita */
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
     gap: 1rem;
-
     height: auto;
     max-width: 100%;
-    margin: 3rem auto 0 auto;
-    padding-inline: 1rem;
+    margin: 1.5rem auto 0 auto;
+    padding: 0;
   }
 
   .card {
-    width: 100%;
     height: auto;
-    aspect-ratio: 1 / 1;
+    min-height: 140px;
+    border-radius: 18px;
+    padding: 1rem 0.75rem;
+    flex: unset !important;
+  }
 
-    border-radius: 20px;
-    transition: none;
+  .imageWrapper {
+    width: 3.25rem;
+    height: 3.25rem;
+  }
+
+  .cardContent {
+    opacity: 1;
+    max-height: none;
+    transform: none;
+    margin-top: 0.5rem;
+  }
+
+  .techName {
+    font-size: 1.05rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .categoryBadge {
+    font-size: 0.65rem;
+    padding: 0.15rem 0.5rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .techDescription {
+    display: none;
+  }
+
+  .cardGlowOverlay {
+    opacity: 0.5;
   }
 }
+
