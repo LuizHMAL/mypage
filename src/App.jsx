@@ -59,25 +59,25 @@ export function App() {
 
   const projectsData = [
     {
-      imagem: "/assets/loopah.png",
+      imagem: "/assets/DECSI.png",
       titulo: "Companhia Loopah",
-      descricao: "Plataforma de turismo e reservas de viagens com navegação dinâmica e design intuitivo.",
-      tags: ["React", "CSS Modules", "Vite", "UX/UI"],
-      link: "https://vercel.com/luiz-henriques-projects-953f8b78"
+      descricao: "Plataforma institucional do DECSI de cursos superiores de TI do campus ICEA - UFOP.",
+      tags: ["Manutenção, Institucional"],
+      link: "https://decsi.ufop.br/"
     },
     {
-      imagem: "/assets/ifimg.png",
-      titulo: "Feed de Notícias & Interações",
-      descricao: "Aplicação de feed social responsivo com comentários em tempo real, curtidas e gerenciamento de estado.",
-      tags: ["React", "JavaScript", "Componentização", "Vite"],
-      link: "https://vercel.com/luiz-henriques-projects-953f8b78"
+      imagem: "/assets/loopah.png",
+      titulo: "Loopah Viagens",
+      descricao: "Site Loopah de viagens, feito para trabalho da disciplina de programação web do curso de TI do IFNMG.",
+      tags: ["Materialize", "JavaScript", "Componentização", "Vite"],
+      link: "https://loopah.vercel.app/"
     },
     {
       imagem: "/assets/WeJ.png",
       titulo: "Portal Institucional WeJ",
       descricao: "Site institucional corporativo para apresentação de serviços e empresas associadas ao grupo.",
       tags: ["React", "Design Responsivo", "Modern CSS", "Vercel"],
-      link: "https://vercel.com/luiz-henriques-projects-953f8b78"
+      link: "https://desafio-visao.vercel.app/"
     }
   ];
 
