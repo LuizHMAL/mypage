@@ -4,7 +4,7 @@ export function LinkButton({ src, icon: Icon, href, alt, label, variant = 'defau
   return (
     <a
       href={href}
-      className={`${styles.linkButton} ${variant === 'primary' ? styles.primary : ''} ${variant === 'glass' ? styles.glass : ''}`}
+      className={`${styles.linkButton} ${styles[variant] || ''}`}
       target={target}
       rel={target === '_blank' ? "noopener noreferrer" : undefined}
       {...rest}
