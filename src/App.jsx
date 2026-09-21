@@ -8,6 +8,7 @@ import { Footer } from "./components/Footer";
 import { LinkButton } from "./components/linkButton";
 import { 
   ExternalLink, 
+  FileDown,
   FolderGit2, 
   Layers, 
   Send
@@ -59,10 +60,17 @@ export function App() {
 
   const projectsData = [
     {
+      imagem: "/assets/gerenciador-de-matriculas.png",
+      titulo: "Gerenciador de Matrículas",
+      descricao: "Plataforma web para consulta, acompanhamento e gerenciamento de disciplinas eletivas e matrículas da UFOP.",
+      tags: ["React", "JavaScript", "Vite", "Vercel"],
+      link: "https://gerenciadordematriculas.vercel.app/"
+    },
+    {
       imagem: "/assets/DECSI.png",
       titulo: "Companhia Loopah",
       descricao: "Plataforma institucional do DECSI de cursos superiores de TI do campus ICEA - UFOP.",
-      tags: ["Manutenção, Institucional"],
+      tags: ["Manutenção", "Institucional"],
       link: "https://decsi.ufop.br/"
     },
     {
@@ -152,6 +160,14 @@ export function App() {
                 label="Fale Comigo"
                 variant="primary"
                 target="_self"
+              />
+
+              <LinkButton 
+                icon={FileDown}
+                href="/assets/curriculo.pdf" 
+                download="Curriculo-Luiz-Henrique.pdf"
+                label="Baixar Currículo"
+                variant="secondary"
               />
             </div>
           </div>
