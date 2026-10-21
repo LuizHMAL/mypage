@@ -117,6 +117,32 @@
   box-shadow: 0 8px 25px rgba(255, 255, 255, 0.1);
 }
 
+/* Secondary / Outline Variant */
+.secondary {
+  background: rgba(16, 185, 129, 0.08);
+  border-color: rgba(52, 211, 153, 0.35);
+  color: var(--white);
+}
+
+.secondary .iconWrapper {
+  color: var(--primary-light);
+}
+
+.secondary .label {
+  color: var(--gray-100);
+}
+
+.secondary:hover {
+  background: rgba(16, 185, 129, 0.18);
+  border-color: var(--primary-light);
+  box-shadow: 0 8px 25px rgba(16, 185, 129, 0.3);
+}
+
+.secondary:hover .label {
+  color: var(--white);
+}
+
+
 @media (max-width: 480px) {
   .linkButton {
     padding: 0.65rem 1rem;
