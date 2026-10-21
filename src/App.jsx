@@ -68,7 +68,7 @@ export function App() {
     },
     {
       imagem: "/assets/DECSI.png",
-      titulo: "Companhia Loopah",
+      titulo: "Portal DECSI",
       descricao: "Plataforma institucional do DECSI de cursos superiores de TI do campus ICEA - UFOP.",
       tags: ["Manutenção", "Institucional"],
       link: "https://decsi.ufop.br/"
