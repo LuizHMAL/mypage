@@ -60,7 +60,7 @@ export function App() {
   const projectsData = [
     {
       imagem: "/assets/DECSI.png",
-      titulo: "Companhia Loopah",
+      titulo: "Plataforma Institucional DECSI",
       descricao: "Plataforma institucional do DECSI de cursos superiores de TI do campus ICEA - UFOP.",
       tags: ["Manutenção, Institucional"],
       link: "https://decsi.ufop.br/"
